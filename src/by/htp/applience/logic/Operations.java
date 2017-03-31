@@ -13,26 +13,26 @@ public Operations(ElectricalAppliances[] appliances) {
 
 public static void addAppliences(ElectricalAppliances aplnc){
 	
-	ElectricalAppliances newAppliances[] = new ElectricalAppliances[appliances.length+1];
-	for(int i =0; i<appliances.length; i++){
-		newAppliances[i] = appliances[i];
+	ElectricalAppliances newAppliances[] = new ElectricalAppliances[getLenth()+1];
+	for(int i =0; i<getLenth(); i++){
+		newAppliances[i] = getAppliences(i);
 	}
-	newAppliances[appliances.length] = aplnc;
-	appliances = newAppliances;
+	newAppliances[getLenth()] = aplnc;
+	ElectricalAppliances.setAppliances(newAppliances);
+	
 }
-
 
 public static void showAppliences(){
-	for(int j = 0; j < appliances.length;j++){
-		System.out.println(appliances[j].toString());
+	for(int j = 0; j < getLenth();j++){
+		System.out.println(getAppliences(j).toString());
 }
-	;
+
 }
 
 public double counUpPowerConsuption(){
 	double p =0;
-	for(int k = 0; k < appliances.length;k++){
-		p = p + appliances[k].getPowerConsuption()*appliances[k].getUseTime();
+	for(int k = 0; k < getLenth();k++){
+		p = p + getAppliences(k).getPowerConsuption()*getAppliences(k).getUseTime();
 }
 	System.out.println("Потребляемая мощность: " + p);
 	return p;
@@ -45,28 +45,29 @@ public void findAppliences(){
 	int f = s1.nextInt();
 	Scanner s2 = new Scanner(System.in);
 	int l = s2.nextInt();
-	for(int i = 0; i < appliances.length; i++){
-		if(appliances[i].getPowerConsuption()>=f && appliances[i].getPowerConsuption()<=l){
-			System.out.println(appliances[i].getName());
+	for(int i = 0; i < getLenth(); i++){
+		if(getAppliences(i).getPowerConsuption()>=f && getAppliences(i).getPowerConsuption()<=l){
+			System.out.println(getAppliences(i).getName());
 		}
 	}
 }
 
-public void appliencesSort() {
+/*public void appliencesSort() {
 	
-	for(int b = 1; b < appliances.length; b++)
-	      for(int d = appliances.length - 1; d >= b; d--) {
-	        if(appliances[d - 1].getPowerConsuption() > appliances[d].getPowerConsuption()) { 
+	for(int b = 1; b < getLenth(); b++)
+	      for(int d = getLenth() - 1; d >= b; d--) {
+	        if(getAppliences(d-1).getPowerConsuption() > getAppliences(d).getPowerConsuption()) { 
 	                                          
-	          ElectricalAppliances t = appliances[d - 1];
-	          appliances[d - 1] = appliances[d];
-	          appliances[d] = t;
+	          ElectricalAppliances t = getAppliences(d-1);
+	          ElectricalAppliances n = getAppliences(d);
+	          //getAppliences(d-1) = getAppliences(d);
+	          //getAppliences(d)= t;
 	      }
 	    }
 		
 	System.out.print("Сортировка массива по возрастанию: ");
-    for(int i = 0; i < appliances.length; i++)
-      System.out.print(" " + appliances[i]);
+    for(int i = 0; i < getLenth(); i++)
+      System.out.print(" " + getAppliences(i));
     System.out.println();
-}
+}*/
 }

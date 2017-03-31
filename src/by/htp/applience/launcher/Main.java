@@ -21,10 +21,10 @@ public class Main {
 		apl.counUpPowerConsuption();
 		apl.addAppliences(new ElectricalAppliances("ElectricStove",2500,2));
 		apl.counUpPowerConsuption();
-		//apl.showAppliences();
-		//apl.appliencesSort();
-		Arrays.sort(ElectricalAppliances.getAppliances(), new SortByName());
 		apl.showAppliences();
+		//apl.appliencesSort();
+		//Arrays.sort(ElectricalAppliances.getAppliances(), new SortByName());
+		//apl.showAppliences();
 		//Arrays.sort(ElectricalAppliances.getAppliances(), new SortByPower());
 		//apl.showAppliences();
 		//Arrays.sort(ElectricalAppliances.getAppliances(), new SortByTime());

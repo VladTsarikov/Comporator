@@ -18,7 +18,7 @@ public class ElectricalAppliances {
 		ElectricalAppliances.appliances = appliances;
 	}
 
-	public static ElectricalAppliances appliances[];
+	private static ElectricalAppliances appliances[];
 	
 	public ElectricalAppliances(String name, int powerConsuption, double useTime) {
 		this.name = name;
@@ -29,6 +29,10 @@ public class ElectricalAppliances {
 	public ElectricalAppliances(ElectricalAppliances appliances[]) {
 		this.appliances=appliances;
 		}
+	
+	public static ElectricalAppliances getAppliences(int a) {
+		return appliances[a];
+	}
 	
 	public double getUseTime() {
 		return useTime;
